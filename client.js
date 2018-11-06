@@ -25,3 +25,38 @@ const employees = [ atticus, jem, scout, robert, mayella ]; // this is an array 
 // Ask questions when you don't.
 
 console.log( employees );
+
+for (let person of employees) {
+  console.log(eachEmployee(person));    
+} 
+
+
+class EmployeeBonus{
+  constructor(employeeName, bonusPercentage, totalCompensation, totalBonus){
+    this.employeeName = employeeName;
+    this.bonusPercentage = bonusPercentage;
+    this.totalCompensation = totalCompensation;
+    this.totalBonus = totalBonus;
+  }
+}
+
+function eachEmployee(person){
+  if (person.reviewRating <= 2) {
+    person.bp = 0;    
+  } 
+  else if (person.reviewRating === 3) {
+    person.bp = 0.04;
+  }
+  else if (person.reviewRating === 4) {
+    person.bp = 0.06;
+  }
+  else if (person.reviewRating === 5) {
+    person.bp = 0.1;
+  } 
+
+  if (person.employeeNumber.length == 4) {
+    person.bp += 0.05
+  }
+  
+}
+
